@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { InfoWindow, Marker, Map, GoogleApiWrapper, Polygon } from 'google-maps-react';
 
-const mapStyles = {
-  width: '100%',
-  height: '100%'
-};
-
 export class MapContainer extends Component {
   constructor(props) {
     super(props);
@@ -33,22 +28,20 @@ export class MapContainer extends Component {
   };
 
   render() {
-    const triangleCoords = [
-      { lat: 43.7046, lng: -72.2943 },
-      { lat: 43.7034, lng: -72.2886 },
-      { lat: 43.7091, lng: -72.2839 },
-      { lat: 43.7074, lng: -72.2911 }, //choates
-      { lat: 43.7066, lng: -72.2968 }, //ledyard
-      { lat: 43.7030, lng: -72.2841 }, //gym
-      { lat: 43.7046, lng: -72.2943 }
+    const coords = [
+      { lat: 42.651718, lng: -73.751089 },
+      { lat: 42.659718, lng: -73.751089 },
+      { lat: 42.651718, lng: -73.759089 },
+      { lat: 42.659718, lng: -73.759089 },
+      { lat: 42.651718, lng: -73.751089 },
     ];
     return (
       <div>
         <h1>Hello Google Maps</h1>
         <Map
           initialCenter={{
-            lat: 43.713,
-            lng: -72.287
+            lat: 42.651718,
+            lng: -73.755089
           }}
           zoom={16}
           google={this.props.google}
@@ -72,7 +65,7 @@ export class MapContainer extends Component {
             </div>
           </InfoWindow>
           <Polygon
-            paths={triangleCoords}
+            paths={coords}
             strokeColor="#670A66"
             strokeOpacity={0.6}
             strokeWeight={4}
